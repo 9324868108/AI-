@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomateAI - Business Automation Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0D47A1;
+            --accent: #18FFFF;
+            --dark: #121212;
+            --text: #FFFFFF;
+            --grey: #B0BEC5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #121212, #1E1E1E);
+            color: var(--text);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Dashboard Preview */
+        .dashboard-preview {
+            margin: 4rem 5%;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: var(--dark);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Automation Builder Section */
+        .workflow-builder {
+            margin: 4rem 5%;
+            padding: 2rem;
+        }
+
+        .node {
+            background: var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 1rem;
+            position: relative;
+        }
+
+        /* Chatbot Interface */
+        .chatbot-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 350px;
+            background: var(--dark);
+            border-radius: 15px;
+            display: none;
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: var(--dark);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AutomateAI</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>AI-Powered Business Automation</h1>
+        <p class="subtitle">Transform your workflow with intelligent automation</p>
+        <button class="cta">Start Free Trial</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="feature-card">
+            <h3>🤖 AI Automation</h3>
+            <p>Smart automation for inventory, data entry, and customer support</p>
+        </div>
+        <div class="feature-card">
+            <h3>🧩 No-Code Builder</h3>
+            <p>Drag-and-drop workflow creation with AI assistance</p>
+        </div>
+        <div class="feature-card">
+            <h3>📊 Predictive Analytics</h3>
+            <p>AI-driven insights and business forecasting</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="dashboard-preview" id="dashboard">
+        <h2>Smart Dashboard</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h4>Time Saved</h4>
+                <p>1200+ hours</p>
+            </div>
+            <div class="metric-card">
+                <h4>Cost Reduction</h4>
+                <p>$45k+ saved</p>
+            </div>
+            <div class="metric-card">
+                <h4>Active Automations</h4>
+                <p>85+ workflows</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Builder -->
+    <section class="workflow-builder">
+        <h2>Drag-and-Drop Automation Builder</h2>
+        <div class="workflow-visual">
+            <div class="node">Start</div>
+            <div class="node">Process</div>
+            <div class="node">Condition</div>
+            <div class="node">Action</div>
+        </div>
+    </section>
+
+    <!-- Chatbot Interface -->
+    <div class="chatbot-toggle" onclick="toggleChatbot()">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">
+            <h3>AI Assistant</h3>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" placeholder="Ask me about automation...">
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Chatbot toggle
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Scroll animations
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight * 0.8) {
+                    card.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
